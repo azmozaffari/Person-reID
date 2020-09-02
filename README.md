@@ -6,6 +6,9 @@ explain the method here
 
 
 ## steps:
+### Prepare datasets
+Prepare the datasets to the common format,for training and test procedures (taken from st-reid Github)
+prepare.py 
 ### train the person re-id model
 ### extract features via pre-trained model
 ### extrcat hard negative samples

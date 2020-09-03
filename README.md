@@ -16,19 +16,19 @@ python3 train_market.py --PCB --gpu_ids 0 --name ft_ResNet50_pcb_market_e --eras
 python3 train_duke.py --PCB --gpu_ids 0 --name ft_ResNet50_pcb_duke_e --erasing_p 0.5 --train_all --data_dir "./dataset/DukeMTMC_prepare/"
 
 ### extract features via pre-trained model
-**source: market        target: duke**
+**source:** market        **target:** duke
 
 python3 test_st_market.py --PCB --gpu_ids 0 --name ft_ResNet50_pcb_market_e --test_dir "./dataset/DukeMTMC_prepare/"
 
-**source: market        target: market**
+**source:** market        **target:** market
 
 python3 test_st_market.py --PCB --gpu_ids 0 --name ft_ResNet50_pcb_market_e --test_dir "./dataset/market_rename/"
 
-**source: duke          target: duke**
+**source:** duke          **target:** duke
 
 python3 test_st_duke.py --PCB --gpu_ids 0 --name ft_ResNet50_pcb_duke_e --test_dir "./dataset/DukeMTMC_prepare/"
 
-**source:duke           target: market**
+**source:** duke           **target:** market
 
 python3 test_st_duke.py --PCB --gpu_ids 0 --name ft_ResNet50_pcb_duke_e --test_dir "./dataset/market_prepare/"
 

@@ -32,10 +32,11 @@ python3 test_st_duke.py --PCB --gpu_ids 0 --name ft_ResNet50_pcb_duke_e --test_d
 
 python3 test_st_duke.py --PCB --gpu_ids 0 --name ft_ResNet50_pcb_duke_e --test_dir "./dataset/market_prepare/"
 
-
-
+### extract cosine features
+python3 cosine_feature_extraction.py --source_domain duke --target_domain duke
 
 ### extrcat hard negative samples
+
 ### train GAN for negative samples
 ### extract time lift distribution
 ### evaluate the results

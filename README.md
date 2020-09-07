@@ -35,7 +35,6 @@ python3 test_st_duke.py --PCB --gpu_ids 0 --name ft_ResNet50_pcb_duke_e --test_d
 ### extract cosine features
 python3 cosine_feature_extraction.py --source_domain duke --target_domain duke
 
-### extrcat hard negative samples
 ### time distribution extraction
 extract the simple distribution of occurance between two cameras in the specific target domain
 source domain here mentioned that we are using the features extracted from thetarget domain by apllying the pretraoined model of the source domain
@@ -45,6 +44,11 @@ python3 time_distribution_function.py  --source_domain market --target_domain du
 ### draw different histograms
 in draw hist.py file there are two functions for drawing the time difference histogram for all combinations of the camera and drawing features cosine similarity for different domains.
 python3 draw_hist.py --source_domain market --target_domain duke
+
+
+### extrcat hard negative samples
+The samples that have cosine similarity greater than the threshold will be extracted and saved in the hard_negative_samples dir 
+pyhton3 hard_negative_samples_mining.py --gpu_ids 0 --source_domain market --target_domain duke  --threshold 0.7
 
 ### train GAN for negative samples
 ### extract time lift distribution

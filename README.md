@@ -30,7 +30,7 @@ python3 test_st_duke.py --PCB --gpu_ids 0 --name ft_ResNet50_pcb_duke_e --test_d
 
 **source:** duke           **target:** market
 
-python3 test_st_duke.py --PCB --gpu_ids 0 --name ft_ResNet50_pcb_duke_e --test_dir "./dataset/market_prepare/"
+python3 test_st_duke.py --PCB --gpu_ids 0 --name ft_ResNet50_pcb_duke_e --test_dir "./dataset/market_rename/"
 
 ### extract cosine features
 python3 cosine_feature_extraction.py --source_domain duke --target_domain duke

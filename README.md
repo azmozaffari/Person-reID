@@ -9,7 +9,7 @@ The algorithm contains two main parts:
 2- CAD: A teacher student model to learn feature representation for the target domain using the preliminarily labels provided from STN part.
 ## STN
 ### Prepare datasets
-./dataset folders contain original_dataset and modified_dataset dir. in original put the downloaded datasets.
+put downloaded datasets in original_dataset folder as follow: 
 
 ```
 ./dataset

@@ -9,7 +9,7 @@ The algorithm contains two main parts:
 2- CAD: A teacher student model to learn feature representation for the target domain using the preliminarily labels provided from STN part.
 ## STN
 ### Prepare datasets
-Prepare the datasets to the common format,for training and test procedures (taken from st-reid Github)
+./dataset folders contain original_dataset and modified_dataset dir. in original put the downloaded datasets.
 
 ```
 ./dataset
@@ -36,7 +36,7 @@ Prepare the datasets to the common format,for training and test procedures (take
 
 ]
 ```
-prepare_dataset.py --dataset_name Market --dataset_folder ./dataset  //  prepare.py --Duke
+python3 prepare_dataset.py --dataset_name Market --dataset_folder ./dataset  //  prepare.py --Duke
 
 ### train the person re-id model
 python3 train_market.py --PCB --gpu_ids 0 --name ft_ResNet50_pcb_market_e --erasing_p 0.5 --train_all --data_dir "./dataset/market_rename/"

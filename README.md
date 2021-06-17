@@ -10,7 +10,24 @@ The algorithm contains two main parts:
 ## STN
 ### Prepare datasets
 Prepare the datasets to the common format,for training and test procedures (taken from st-reid Github)
-prepare.py --Market   //  prepare.py --Duke
+./dataset
+        |
+        --original_dataset
+                          |
+                          --Duke
+                              |
+                              --bounding_box_test
+                              |
+                              --bounding_box_train
+                              |
+                              --query
+                          |
+                          +Market
+        |
+        --modified_dataset
+        
+
+prepare_dataset.py --dataset_name Market --dataset_folder ./dataset  //  prepare.py --Duke
 
 ### train the person re-id model
 python3 train_market.py --PCB --gpu_ids 0 --name ft_ResNet50_pcb_market_e --erasing_p 0.5 --train_all --data_dir "./dataset/market_rename/"

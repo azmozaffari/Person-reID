@@ -10,7 +10,7 @@ The algorithm contains two main parts:
 ## STN
 ### Prepare datasets
 Prepare the datasets to the common format,for training and test procedures (taken from st-reid Github)
-''' console
+<!''' console
 ./dataset
 ├── modified_dataset
 │   ├── Duke
@@ -33,7 +33,7 @@ Prepare the datasets to the common format,for training and test procedures (take
         ├── gt_query
         └── query
 
-'''
+'''!>
 
 prepare_dataset.py --dataset_name Market --dataset_folder ./dataset  //  prepare.py --Duke
 

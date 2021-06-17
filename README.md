@@ -38,9 +38,9 @@ The algorithm contains two main parts:
 ```
 python3 prepare_dataset.py --dataset_name Market --dataset_folder ./dataset  //  prepare.py --Duke
 
-### train the person re-id model
-python3 train_market.py --PCB --gpu_ids 0 --name ft_ResNet50_pcb_market_e --erasing_p 0.5 --train_all --data_dir "./dataset/market_rename/"
-python3 train_duke.py --PCB --gpu_ids 0 --name ft_ResNet50_pcb_duke_e --erasing_p 0.5 --train_all --data_dir "./dataset/DukeMTMC_prepare/"
+### Prepare pre-trained model
+python3 train_market.py --PCB --gpu_ids 0 --name ft_ResNet50_pcb_market_e --erasing_p 0.5 --train_all --data_dir "./dataset/modified_dataset/Market/"
+python3 train_duke.py --PCB --gpu_ids 0 --name ft_ResNet50_pcb_duke_e --erasing_p 0.5 --train_all --data_dir "./dataset/modified_dataset/Duke/"
 
 ### extract features via pre-trained model
 **source:** market        **target:** duke

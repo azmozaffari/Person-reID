@@ -11,7 +11,7 @@ The algorithm contains two main parts:
 ### Prepare datasets
 Prepare the datasets to the common format,for training and test procedures (taken from st-reid Github)
 
- ![
+```
 ./dataset
 ├── modified_dataset
 │   ├── Duke
@@ -35,7 +35,7 @@ Prepare the datasets to the common format,for training and test procedures (take
         └── query
 
 ]
-
+```
 prepare_dataset.py --dataset_name Market --dataset_folder ./dataset  //  prepare.py --Duke
 
 ### train the person re-id model

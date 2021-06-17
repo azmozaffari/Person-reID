@@ -10,22 +10,30 @@ The algorithm contains two main parts:
 ## STN
 ### Prepare datasets
 Prepare the datasets to the common format,for training and test procedures (taken from st-reid Github)
+'''bash
 ./dataset
-        |
-        --original_dataset
-                          |
-                          --Duke
-                              |
-                              --bounding_box_test
-                              |
-                              --bounding_box_train
-                              |
-                              --query
-                          |
-                          +Market
-        |
-        --modified_dataset
-        
+├── modified_dataset
+│   ├── Duke
+│   │   ├── gallery
+│   │   ├── query
+│   │   └── train_all
+│   └── Market
+│       ├── gallery
+│       ├── query
+│       └── train_all
+└── original_dataset
+    ├── Duke
+    │   ├── bounding_box_test
+    │   ├── bounding_box_train
+    │   └── query
+    └── Market
+        ├── bounding_box_test
+        ├── bounding_box_train
+        ├── gt_bbox
+        ├── gt_query
+        └── query
+
+'''
 
 prepare_dataset.py --dataset_name Market --dataset_folder ./dataset  //  prepare.py --Duke
 

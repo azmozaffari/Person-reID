@@ -10,7 +10,8 @@ The algorithm contains two main parts:
 ## STN
 ### Prepare datasets
 Prepare the datasets to the common format,for training and test procedures (taken from st-reid Github)
-<!''' console
+
+'''bash
 ./dataset
 ├── modified_dataset
 │   ├── Duke

@@ -1,12 +1,13 @@
 # Person-reID
 ISSUM person-reID project
-This project is focused on the unsupervised person-reid that is applicable to different domains.
-## GAN-based Unsupervised Person-reid
-explain the method here
+This project is focused on the unsupervised domain adaptive person re-identification.
+We have proposed a new two-part UAD approach to improve the accuracy rate of unsupervised re-id matching in different domains
 
-
-## steps:
-
+# STN-CAD Person re-id
+The algorithm contains two main parts:
+1- STN: extracts preliminarily labels for the target domain using the pre-trained source model and adding spatio-temporal features to boost the results.
+2- CAD: A teacher student model to learn feature representation for the target domain using the preliminarily labels provided from STN part.
+## STN
 ### Prepare datasets
 Prepare the datasets to the common format,for training and test procedures (taken from st-reid Github)
 prepare.py --Market   //  prepare.py --Duke

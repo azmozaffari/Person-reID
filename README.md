@@ -39,7 +39,7 @@ put downloaded datasets in original_dataset folder as follow:
         └── query
 
 
-]
+
 ```
 python3 prepare_dataset.py --dataset_name Market --dataset_folder ./dataset  //  prepare.py --Duke
 

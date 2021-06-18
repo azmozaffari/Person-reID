@@ -17,11 +17,15 @@ put downloaded datasets in original_dataset folder as follow:
 │   ├── Duke
 │   │   ├── gallery
 │   │   ├── query
-│   │   └── train_all
+│   │   ├── train
+│   │   ├── train_all
+│   │   └── val
 │   └── Market
 │       ├── gallery
 │       ├── query
-│       └── train_all
+│       ├── train
+│       ├── train_all
+│       └── val
 └── original_dataset
     ├── Duke
     │   ├── bounding_box_test
@@ -33,6 +37,7 @@ put downloaded datasets in original_dataset folder as follow:
         ├── gt_bbox
         ├── gt_query
         └── query
+
 
 ]
 ```

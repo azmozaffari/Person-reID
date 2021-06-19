@@ -46,8 +46,11 @@ python3 prepare_dataset.py --dataset_name Market --dataset_folder ./dataset  // 
 ### Prepare pre-trained model
 we use PCB model for training and save the trained models in ./model folder
 
-python3 train.py --PCB --gpu_ids 0 --model_name ft_ResNet50 --erasing_p 0.5 --train_all --train_dir "./dataset/modified_dataset/market/" --source market
+python3 train.py --PCB --gpu_ids 0 --model_name ft_ResNet50 --erasing_p 0.5 --train_all --train_dir "./dataset/modified_dataset/" --source market
 
+train without PCB
+
+python3 train.py  --gpu_ids 0 --model_name ft_ResNet50 --erasing_p 0.5 --train_all --train_dir "./dataset/modified_dataset/" --source market
 ### extract features using pre-trained model
 **source:** market        **target:** duke
 

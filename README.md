@@ -54,21 +54,13 @@ train without PCB
 
 python3 train.py  --gpu_ids 0 --model_name ft_ResNet50 --erasing_p 0.5 --train_all --train_dir "./dataset/modified_dataset/" --source market
 ### extract features using pre-trained model
-**source:** market        **target:** duke
+python3 test.py --PCB --gpu_ids 0  --source duke --target market --query_type multi_query  
 
-python3 test_st_market.py --PCB --gpu_ids 0 --name ft_ResNet50_pcb_market_e --test_dir "./dataset/DukeMTMC_prepare/"
+it saves the file in ./rep folder
 
-**source:** market        **target:** market
 
-python3 test_st_market.py --PCB --gpu_ids 0 --name ft_ResNet50_pcb_market_e --test_dir "./dataset/market_rename/"
+###  Evaluate  
 
-**source:** duke          **target:** duke
-
-python3 test_st_duke.py --PCB --gpu_ids 0 --name ft_ResNet50_pcb_duke_e --test_dir "./dataset/DukeMTMC_prepare/"
-
-**source:** duke           **target:** market
-
-python3 test_st_duke.py --PCB --gpu_ids 0 --name ft_ResNet50_pcb_duke_e --test_dir "./dataset/market_rename/"
 
 ### extract cosine features
 python3 cosine_feature_extraction.py --source_domain duke --target_domain duke

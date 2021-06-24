@@ -17,12 +17,14 @@ put downloaded datasets in original_dataset folder as follow:
 │   ├── Duke
 │   │   ├── gallery
 │   │   ├── query
+|   |   ├── multi_query
 │   │   ├── train
 │   │   ├── train_all
 │   │   └── val
 │   └── Market
 │       ├── gallery
 │       ├── query
+|       ├── multi_query
 │       ├── train
 │       ├── train_all
 │       └── val
@@ -41,7 +43,7 @@ put downloaded datasets in original_dataset folder as follow:
 
 
 ```
-python3 prepare_dataset.py --dataset_name Market --dataset_folder ./dataset  //  prepare.py --Duke
+python3 prepare_dataset.py --dataset_name market --dataset_folder ./dataset  //  prepare.py --duke
 
 ### Prepare pre-trained model
 we use PCB model for training and save the trained models in ./model folder

@@ -53,13 +53,23 @@ python3 train.py --PCB --gpu_ids 0 --model_name ft_ResNet50 --erasing_p 0.5 --tr
 train without PCB
 
 python3 train.py  --gpu_ids 0 --model_name ft_ResNet50 --erasing_p 0.5 --train_all --train_dir "./dataset/modified_dataset/" --source market
-### extract features using pre-trained model
-python3 test.py --PCB --gpu_ids 0  --source duke --target market --query_type multi_query  
-
-it saves the file in ./rep folder
 
 
-###  Evaluate  
+### Extract features using pre-trained model
+
+query_type is "query" or "multi-query" depends on the data
+
+python3 extract_features.py --PCB --gpu_ids 0  --source market --target duke --query_type multi_query
+
+it saves the files in ./rep folder
+### Evaluate 
+It could be one by one matching or summarized matching --S
+
+evaluate_gpu.py --PCB --gpu_ids 0  --source duke --target market --query_type multi_query --S
+
+Summarized matching means we use mean of the features and frame numbers for each tracklet instead of the one-by-one image matching
+###
+
 
 
 ### extract cosine features

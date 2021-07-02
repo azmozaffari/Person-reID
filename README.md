@@ -73,8 +73,10 @@ Summarized matching means we use mean of the features and frame numbers for each
 
 
 ### extract cosine features
-python3 cosine_feature_extraction.py --source_domain duke --target_domain duke
+for two types query and multi_query it extracts cosine features
+--S for tracklets
 
+python3 extract_cosine_scores.py --PCB --gpu_ids 0 --source market --target market --query_type query  --S
 ### time distribution extraction
 extract the simple distribution of occurance between two cameras in the specific target domain
 source domain here mentioned that we are using the features extracted from thetarget domain by apllying the pretraoined model of the source domain

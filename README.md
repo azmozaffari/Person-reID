@@ -57,11 +57,11 @@ python3 train.py  --gpu_ids 0 --model_name ft_ResNet50 --erasing_p 0.5 --train_a
 
 ### Extract features using pre-trained model
 
-query_type is "query" or "multi-query" depends on the data
+query_type is "query" or "multi-query" depends on the data (tracklet or single query)
 
 python3 extract_features.py --PCB --gpu_ids 0  --source market --target duke --query_type multi_query
 
-it saves the files in ./rep folder
+it saves two files in ./rep folder one contains features of all single imgs, the other takes average of feature vector and frame numbers for each tracklet and save that with suffix _s 
 ### Evaluate 
 It could be one by one matching or summarized matching --S
 

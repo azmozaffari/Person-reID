@@ -62,37 +62,18 @@ query_type is "query" or "multi-query" depends on the data (tracklet or single q
 python3 extract_features.py --PCB --gpu_ids 0  --source market --target duke --query_type multi_query
 
 it saves two files in ./rep folder one contains features of all single imgs, the other takes average of feature vector and frame numbers for each tracklet and save that with suffix _s 
-### Evaluate 
-It could be one by one matching or summarized matching --S
-
-evaluate_gpu.py --PCB --gpu_ids 0  --source duke --target market --query_type multi_query --S
-
-Summarized matching means we use mean of the features and frame numbers for each tracklet instead of the one-by-one image matching
-###
 
 
-
-### extract cosine features
+### Extract cosine features
 for two types query and multi_query it extracts cosine features
---S for tracklets
+--S for tracklets is saved as mean value
 
 python3 extract_cosine_scores.py --PCB --gpu_ids 0 --source market --target market --query_type query  --S
-### time distribution extraction
-extract the simple distribution of occurance between two cameras in the specific target domain
-source domain here mentioned that we are using the features extracted from thetarget domain by apllying the pretraoined model of the source domain
 
-python3 time_distribution_function.py  --source_domain market --target_domain duke
+### Main
+run the code
 
-### draw different histograms
-in draw hist.py file there are two functions for drawing the time difference histogram for all combinations of the camera and drawing features cosine similarity for different domains.
-python3 draw_hist.py --source_domain market --target_domain duke
+python3 python3 main.py --PCB --gpu_ids 0 --source duke --target market --query_type query
 
 
-### extrcat hard negative samples
-The samples that have cosine similarity greater than the threshold will be extracted and saved in the hard_negative_samples dir 
-pyhton3 hard_negative_samples_mining.py --gpu_ids 0 --source_domain market --target_domain duke  --threshold 0.7
 
-### train GAN for negative samples
-### extract time lift distribution
-### evaluate the results
-### re-rank the results

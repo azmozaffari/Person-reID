@@ -1,7 +1,18 @@
-# Person-reID
-ISSUM person-reID project
-This project is focused on the unsupervised domain adaptive person re-identification.
-We have proposed a new two-part UAD approach to improve the accuracy rate of unsupervised re-id matching in different domains
+# A Simple and Effective Person-reID
+
+This project is focused on the domain adaptive person re-identification in intra-camera supervised setting.
+
+
+
+
+
+
+
+
+
+
+
+We have proposed a new two-level coarse to fine  UAD approach to improve the accuracy rate of unsupervised re-id matching in different domains
 
 # STN-CAD Person re-id
 The algorithm contains two main parts:

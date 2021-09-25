@@ -1,40 +1,26 @@
-# A Simple and Effective Person-reID
-
-This project is focused on the domain adaptive person re-identification in intra-camera supervised setting.
-
-![2](2.pdf)
-
-
+# A Simple and Effective Intra-camera Supervised Person-reID
+(the part of codes is borrowed from https://github.com/Wanggcong/Spatial-Temporal-Re-identification.git)
+<p align="center">
+  <img src="2-1.png" width="1050" title="hover text">
+</p>
 
 
 
-We have proposed a new two-level coarse to fine  UAD approach to improve the accuracy rate of unsupervised re-id matching in different domains
 
-# STN-CAD Person re-id
-The algorithm contains two main parts:
-1- STN: extracts preliminarily labels for the target domain using the pre-trained source model and adding spatio-temporal features to boost the results.
-2- CAD: A teacher student model to learn feature representation for the target domain using the preliminarily labels provided from STN part.
-## STN
-### Prepare datasets
-put downloaded datasets in original_dataset folder as follow: 
+
+Our approach consists of three main steps:</br>
+1- Pseudo-labeling</br>
+2- Confidence estimation</br>
+3- Feature representation learning</br>
+
+</br>
+
+# Pseudo-labeling
+## Prepare datasets
+Make a new folder 'original_dataset' in './dataset' folder and put downloaded datasets there like: 
 
 ```
 ./dataset
-├── modified_dataset
-│   ├── Duke
-│   │   ├── gallery
-│   │   ├── query
-|   |   ├── multi_query
-│   │   ├── train
-│   │   ├── train_all
-│   │   └── val
-│   └── Market
-│       ├── gallery
-│       ├── query
-|       ├── multi_query
-│       ├── train
-│       ├── train_all
-│       └── val
 └── original_dataset
     ├── Duke
     │   ├── bounding_box_test
@@ -50,23 +36,24 @@ put downloaded datasets in original_dataset folder as follow:
 
 
 ```
-python3 prepare_dataset.py --dataset_name market --dataset_folder ./dataset  //  prepare.py --duke
+To prepare the dataset run:<br>
+*python3 prepare_dataset.py --dataset_name market*
 
 ### Prepare pre-trained model
-we use PCB model for training and save the trained models in ./model folder
+we use PCB model for training and save the trained models in ./model folder <br>
 
-python3 train.py --PCB --gpu_ids 0 --model_name ft_ResNet50 --erasing_p 0.5 --train_all --train_dir "./dataset/modified_dataset/" --source market
+*python3 train.py --PCB --gpu_ids 0 --model_name ft_ResNet50 --erasing_p 0.5 --train_all --train_dir "./dataset/modified_dataset/" --source market*
+<br>
+train with Resnet50 <br>
 
-train without PCB
-
-python3 train.py  --gpu_ids 0 --model_name ft_ResNet50 --erasing_p 0.5 --train_all --train_dir "./dataset/modified_dataset/" --source market
+*python3 train.py  --gpu_ids 0 --model_name ft_ResNet50 --erasing_p 0.5 --train_all --train_dir "./dataset/modified_dataset/" --source market*
 
 
-### Extract features using pre-trained model
+## Extract visual features using pre-trained model
 
 query_type is "query" or "multi-query" depends on the data (tracklet or single query)
 
-python3 extract_features.py --PCB --gpu_ids 0  --source market --target duke --query_type multi_query
+*python3 extract_features.py --PCB --gpu_ids 0  --source market --target duke --query_type query*
 
 it saves two files in ./rep folder one contains features of all single imgs, the other takes average of feature vector and frame numbers for each tracklet and save that with suffix _s 
 

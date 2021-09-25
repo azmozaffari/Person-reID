@@ -2,11 +2,7 @@
 
 This project is focused on the domain adaptive person re-identification in intra-camera supervised setting.
 
-
-
-
-
-
+![2](2.pdf)
 
 
 

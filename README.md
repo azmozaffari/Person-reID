@@ -65,9 +65,12 @@ for two types query and multi_query it extracts cosine features
 python3 extract_cosine_scores.py --PCB --gpu_ids 0 --source market --target market --query_type query  --S
 
 ### Main
-run the code
+Run the code to compute and save the joint features query/candidate subsets, bipartite matching and capply confidence estimation.<br>
 
-python3 python3 main.py --PCB --gpu_ids 0 --source duke --target market --query_type query
+*python3 main.py --PCB --gpu_ids 0 --source duke --target market --query_type query*
+
+
+### Update Dataset
 
 
 

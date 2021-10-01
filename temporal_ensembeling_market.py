@@ -1,4 +1,6 @@
 
+
+#
 from __future__ import print_function, division
 
 import argparse
@@ -16,7 +18,7 @@ import matplotlib.pyplot as plt
 from PIL import Image
 import time
 import os
-from model_ import ft_net, ft_net_test
+from model_mt import ft_net, ft_net_test
 from random_erasing import RandomErasing
 import json
 
@@ -180,7 +182,7 @@ model_name = 'ft_ResNet50_market_e'
 
 model = ft_net_test([class_names1,class_names2,class_names3, class_names4, class_names5, class_names6])#,class_names7, class_names8]) ####???????????????????????
 
-alpha = 0.7
+alpha = 0.1
 n = 0
 for i in range(n,50):
     net = save_path+'/'+model_name+'/'+'net_'+str(i)+'.pth'
@@ -193,7 +195,7 @@ for i in range(n,50):
         
     if i>1+n:
         for key in teacher:
-            teacher[key] = alpha*teacher[key] + (1-alpha)*student[key]
+            teacher[key] = alpha*teacher[key] +(1-alpha)*student[key]
         
         student = torch.load(net)
 

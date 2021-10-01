@@ -14,7 +14,7 @@ from torchvision import datasets, models, transforms
 import time
 import os
 import scipy.io
-from model_ import ft_net, ft_net_test
+from model_mt import ft_net, ft_net_test
 
 ######################################################################
 # Options

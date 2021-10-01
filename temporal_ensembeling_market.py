@@ -180,7 +180,7 @@ model_name = 'ft_ResNet50_market_e'
 
 model = ft_net_test([class_names1,class_names2,class_names3, class_names4, class_names5, class_names6])#,class_names7, class_names8]) ####???????????????????????
 
-
+alpha = 0.7
 n = 0
 for i in range(n,50):
     net = save_path+'/'+model_name+'/'+'net_'+str(i)+'.pth'
@@ -193,7 +193,7 @@ for i in range(n,50):
         
     if i>1+n:
         for key in teacher:
-            teacher[key] = 0.7*teacher[key] + 0.3*student[key]
+            teacher[key] = alpha*teacher[key] + (1-alpha)*student[key]
         
         student = torch.load(net)
 

@@ -92,7 +92,18 @@ For Market <br>
 *python3 temporal_ensembeling_market.py*
 
 
-### 
+### Extract features 
+
+For Duke <br>
+*python3 extract_features_duke.py*
+
+For Market <br>
+*python3 extract_features_market.py*
+
+### Evaluate
+*python3 evaluate.py  --gpu_ids 0 --source duke --target duke --query_type query*
+
+
 
 
 

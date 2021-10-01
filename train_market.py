@@ -57,8 +57,8 @@ if len(gpu_ids)>0:
 
 
 #print(gpu_ids[0])
-if not os.path.exists("./model_/"):
-    os.makedirs("./model_/")
+if not os.path.exists("./model_mt/"):
+    os.makedirs("./model_mt/")
 
 ######################################################################
 # Load Data
@@ -187,7 +187,7 @@ def train_model(model,model_teacher, criterion, optimizer, scheduler, num_epochs
     since = time.time()
     teacher = model.state_dict()
 
-    save_path = os.path.join('./model_/ft_ResNet50_duke_e/net_last_teacher.pth')
+    save_path = os.path.join('./model_mt/ft_ResNet50_duke_e/net_last_teacher.pth')
     # model_teacher.load_state_dict(torch.load(save_path))
      
     
@@ -344,7 +344,7 @@ def draw_curve(current_epoch):
 #---------------------------
 def save_network(network, epoch_label):
     save_filename = 'net_%s.pth'% epoch_label
-    save_path = os.path.join('./model_',model_name,save_filename)
+    save_path = os.path.join('./model_mt',model_name,save_filename)
     torch.save(network.cpu().state_dict(), save_path)
     if torch.cuda.is_available:
         network.cuda(gpu_ids[0])
@@ -443,7 +443,7 @@ exp_lr_scheduler = lr_scheduler.StepLR(optimizer_ft, step_size=40, gamma=0.1)
 #
 # It should take around 1-2 hours on GPU. 
 #
-dir_name = os.path.join('./model_',model_name)
+dir_name = os.path.join('./model_mt',model_name)
 if not os.path.isdir(dir_name):
     os.mkdir(dir_name)
 

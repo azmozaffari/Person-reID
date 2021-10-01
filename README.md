@@ -84,7 +84,15 @@ For Market<br>
 *python3 train_market.py  --gpu_ids 0 --model_name ft_ResNet50 --erasing_p 0.5  --train_dir "./dataset/modified_dataset" --source market*
 
 
+### Compute Mean Network
+For Duke <br>
+*python3 temporal_ensembeling_duke.py*
 
+For Market <br>
+*python3 temporal_ensembeling_market.py*
+
+
+### 
 
 
 

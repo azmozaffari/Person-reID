@@ -21,7 +21,7 @@ from model_mt import ft_net, ft_net_test
 # --------
 parser = argparse.ArgumentParser(description='Training')
 parser.add_argument('--gpu_ids',default='0', type=str,help='gpu_ids: e.g. 0  0,1,2  0,2')
-parser.add_argument('--which_epoch',default='last', type=str, help='0,1,2,3...or last')
+parser.add_argument('--which_epoch',default='last_t', type=str, help='0,1,2,3...or last')
 parser.add_argument('--test_dir',default='./dataset/modified_dataset',type=str, help='./test_data')
 parser.add_argument('--model_name', default='ft_ResNet50', type=str, help='save model path')
 parser.add_argument('--batchsize', default=32, type=int, help='batchsize')

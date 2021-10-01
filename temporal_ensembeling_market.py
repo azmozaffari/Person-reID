@@ -58,8 +58,8 @@ if len(gpu_ids)>0:
 
 
 #print(gpu_ids[0])
-if not os.path.exists("./model_/"):
-    os.makedirs("./model_/")
+if not os.path.exists("./model_mt/"):
+    os.makedirs("./model_mt/")
 
 ######################################################################
 # Load Data
@@ -131,17 +131,6 @@ image_datasets['train5'] = datasets.ImageFolder(os.path.join(train_dir, 'sudo_la
 image_datasets['train6'] = datasets.ImageFolder(os.path.join(train_dir, 'sudo_label' , "6"),
                                           data_transforms['train'])
 
-# image_datasets['train7'] = datasets.ImageFolder(os.path.join(train_dir, 'sudo_label' , "7"),
-#                                           data_transforms['train'])
-
-# image_datasets['train8'] = datasets.ImageFolder(os.path.join(train_dir, 'sudo_label' , "8"),
-                                          # data_transforms['train'])
-############???????????????????????????????????
-
-# image_datasets['val'] = datasets.ImageFolder(os.path.join(train_dir, 'val'),
-                                          # data_transforms['val'])
-
-
 
 
 
@@ -155,9 +144,6 @@ class_names3 = len(image_datasets['train3'].classes)
 class_names4 = len(image_datasets['train4'].classes)
 class_names5 = len(image_datasets['train5'].classes)
 class_names6 = len(image_datasets['train6'].classes)
-# class_names7 = len(image_datasets['train7'].classes)
-# class_names8 = len(image_datasets['train8'].classes)
-######??????????????????????????????????????
 
 
 # print([len(class_names1),len(class_names2),len(class_names3, class_names4, class_names5, class_names6])
@@ -174,15 +160,15 @@ def save_network(network, epoch_label):
 
 
 
-save_path = './model_'
+save_path = './model_mt'
 model_name = 'ft_ResNet50_market_e'
-# model_name = 'ft_ResNet50_duke_e'  ##########???????????????????????????????
+
 
 # net_last_t.pth'
 
-model = ft_net_test([class_names1,class_names2,class_names3, class_names4, class_names5, class_names6])#,class_names7, class_names8]) ####???????????????????????
+model = ft_net_test([class_names1,class_names2,class_names3, class_names4, class_names5, class_names6])
 
-alpha = 0.1
+alpha = 0.4
 n = 0
 for i in range(n,50):
     net = save_path+'/'+model_name+'/'+'net_'+str(i)+'.pth'
@@ -199,8 +185,7 @@ for i in range(n,50):
         
         student = torch.load(net)
 
-# for key in teacher:
-#     teacher[key] = teacher[key]/47
+
 
 
 model.load_state_dict(teacher)

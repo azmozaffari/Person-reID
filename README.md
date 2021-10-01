@@ -58,7 +58,7 @@ query_type is "query" or "multi-query" depends on the data (tracklet or single q
 it saves two files in ./rep folder one contains features of all single imgs, the other takes average of feature vector and frame numbers for each tracklet and save that with suffix _s 
 
 
-### Extract cosine features
+### Extract cosine similarity score for all samples and save
 for two types query and multi_query it extracts cosine features
 --S for tracklets is saved as mean value
 
@@ -70,7 +70,23 @@ Run the code to compute and save the joint features query/candidate subsets, bip
 *python3 main.py --PCB --gpu_ids 0 --source duke --target market --query_type query*
 
 
-### Update Dataset
+### Update the Dataset
+
+*python3 update_dataset.py --PCB  --source market --target duke --query_type query*
+
+### Train Multi-Task Network
+For Duke<br>
+
+*python3 train_duke.py  --gpu_ids 0 --model_name ft_ResNet50 --erasing_p 0.5  --train_dir "./dataset/modified_dataset" --source duke*
+
+For Market<br>
+
+*python3 train_market.py  --gpu_ids 0 --model_name ft_ResNet50 --erasing_p 0.5  --train_dir "./dataset/modified_dataset" --source market*
+
+
+
+
+
 
 
 

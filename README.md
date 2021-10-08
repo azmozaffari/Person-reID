@@ -1,7 +1,7 @@
 # A Simple and Effective Intra-camera Supervised Person-reID
 (A part of the codes is borrowed from https://github.com/Wanggcong/Spatial-Temporal-Re-identification.git and https://github.com/layumi/Person-reID-triplet-loss)
 <p align="center">
-  <img src="2.pdf" width="1050" title="hover text">
+  <img src="2.png" width="1050" title="hover text">
 </p>
 
 

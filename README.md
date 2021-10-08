@@ -14,7 +14,7 @@ Our approach consists of three main steps:</br>
 3- Feature representation learning</br>
 
 </br>
-#Setup and Dependencies
+# Setup and Dependencies
 Install dependencies: pip install -r requirements.txt
 # Pseudo-labeling
 ## Prepare datasets

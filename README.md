@@ -16,6 +16,7 @@ Our approach consists of three main steps:</br>
 </br>
 # Setup and Dependencies
 Install dependencies: pip install -r requirements.txt
+
 # Pseudo-labeling
 ## Prepare datasets
 Make a new folder 'original_dataset' in './dataset' folder and put downloaded datasets there like: 

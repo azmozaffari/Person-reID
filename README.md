@@ -1,4 +1,4 @@
-# A Simple and Effective Intra-camera Supervised Person-reID
+# A Simple and Effective Intra-camera unsupervised Person-reID
 This is the implementation of my recent research about person-reid. You can find the pre-print in https://drive.google.com/file/d/194sEeoADDSXvYoi5mXQhkkMlPvbT7sQL/view?usp=drive_link
 
 (A part of the codes in this project is taken from https://github.com/Wanggcong/Spatial-Temporal-Re-identification.git and https://github.com/layumi/Person-reID-triplet-loss)
